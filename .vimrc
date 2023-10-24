@@ -10,6 +10,14 @@ set cursorcolumn
 set cursorline
 
 
+" PLUGINS
+call plug#begin()
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+call plug#end()
+
+
 " TREESITTER
 set path+=**
 let g:netrw_banner = 0
@@ -24,7 +32,7 @@ set smartcase
 
 " TABS
 set tabpagemax=15
-set showtabline=1
+set showtabline=2
 
 
 " SPLIT
@@ -43,7 +51,7 @@ filetype plugin indent on
 
 " NUMBERS 
 set number
-set relativenumber
+" set relativenumber
 set signcolumn=no
 set numberwidth=5
 
