@@ -33,6 +33,8 @@ barbar.setup {
   maximum_length = 30,
   minimum_length = 0,
 
+  insert_at_end = true,
+
   -- Set the filetypes which barbar will offset itself for
   sidebar_filetypes = {
     NvimTree = {
