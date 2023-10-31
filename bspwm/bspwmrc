@@ -1,13 +1,13 @@
 #! /bin/sh
 
+# Keybindings daemon
 sxhkd &
-picom &
-nitrogen --restore
-setxkbmap -model pc104 -layout de,ru -option grp:win_space_toggle
-xsetroot -cursor_name left_ptr
-$HOME/.config/polybar/launch.sh
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9
+# Launch autostart applications
+./autostart.sh
+
+# Set workspaces
+bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9
 
 bspc config border_width 2
 bspc config window_gap   0
