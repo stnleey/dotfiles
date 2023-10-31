@@ -33,6 +33,7 @@ alias tr="eza --sort=type --tree --icons"
 
 export PATH="$HOME/.cargo/bin/:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # My scripts
 export PATH="$HOME/.local/bin/:$PATH"
