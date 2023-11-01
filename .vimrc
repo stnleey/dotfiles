@@ -13,15 +13,22 @@ set cursorline
 " PLUGINS
 call plug#begin()
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    " Languages
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+    " Colorschemes
+    Plug 'morhetz/gruvbox'
+
+    " Utils
+    Plug 'preservim/nerdtree'
 
 call plug#end()
 
 
 " TREESITTER
-set path+=**
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+" set path+=**
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
 
 
 " SEARCH
@@ -75,7 +82,8 @@ autocmd FileType python setlocal colorcolumn=80
 
 " MAPS
 " Filemanager
-map <silent><SPACE>e :Lex 25<CR>
+" map <silent><SPACE>e :Lex 25<CR>
+map <silent><SPACE>e :NERDTreeToggle<CR>
 
 " Move between splited windows
 noremap <C-h> <C-w>h 
@@ -102,7 +110,8 @@ nmap <silent><S-h> :tabp<CR>
 nmap <silent>tn :tabnew<CR>
 
 " COLORSCHEME
-colorscheme sorbet
+" colorscheme sorbet
+colorscheme gruvbox
 
 " Transparent background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
