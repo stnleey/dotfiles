@@ -1,7 +1,7 @@
 " BASICS
 syntax on
 set mouse=a
-set scrolloff=7
+set scrolloff=10
 set updatetime=300
 set clipboard=unnamedplus
 set background=dark
@@ -13,22 +13,23 @@ set cursorline
 " PLUGINS
 call plug#begin()
 
-    " Languages
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Languages
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'neoclide/coc.nvim', {'branch': 'release' }
 
-    " Colorschemes
-    Plug 'morhetz/gruvbox'
+" Colorschemes
+Plug 'morhetz/gruvbox'
 
-    " Utils
-    Plug 'preservim/nerdtree'
+" Utils
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
 
 " TREESITTER
-" set path+=**
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
+set path+=**
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
 
 
 " SEARCH
@@ -39,7 +40,7 @@ set smartcase
 
 " TABS
 set tabpagemax=15
-set showtabline=2
+set showtabline=1
 
 
 " SPLIT
@@ -59,7 +60,7 @@ filetype plugin indent on
 " NUMBERS 
 set number
 " set relativenumber
-set signcolumn=no
+set signcolumn=yes
 set numberwidth=5
 
 
@@ -71,13 +72,13 @@ set shiftwidth=4
 
 
 " FILE TYPE SPECIFICATIONS 
-autocmd FileType html setlocal ts=2 sts=2 sw=2
-autocmd FileType lua setlocal ts=2 sts=2 sw=2
+autocmd FileType html       setlocal ts=2 sts=2 sw=2
+autocmd FileType lua        setlocal ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
-autocmd FileType json setlocal ts=2 sts=2 sw=2
-autocmd FileType cpp setlocal ts=2 sts=2 sw=2
-autocmd FileType python setlocal colorcolumn=80
+autocmd FileType json       setlocal ts=2 sts=2 sw=2
+autocmd FileType python     setlocal colorcolumn=80
+autocmd FileType markdown   setlocal wrap
 
 
 " MAPS
@@ -111,7 +112,21 @@ nmap <silent>tn :tabnew<CR>
 
 " COLORSCHEME
 " colorscheme sorbet
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme lunaperche
 
 " Transparent background
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+
+" coc completitions
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+" coc GoTo navigation
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+
+" coc typehints
+nnoremap <silent><nowait> <space>h  :CocCommand document.toggleInlayHint<cr>
