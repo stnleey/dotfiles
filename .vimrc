@@ -78,10 +78,10 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 autocmd FileType json       setlocal ts=2 sts=2 sw=2
 autocmd FileType python     setlocal colorcolumn=80
-autocmd FileType markdown   setlocal textwidth=80 formatoptions+=t
+autocmd FileType markdown   setlocal wrap
 
 " format .md file on save
-autocmd BufWritePre *.md normal! ggVGgq
+" autocmd BufWritePre *.md normal! ggVGgq
 
 
 " MAPS
