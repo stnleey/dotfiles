@@ -6,8 +6,8 @@ set updatetime=300
 set clipboard=unnamedplus
 set background=dark
 set nowrap
-set cursorcolumn
-set cursorline
+" set cursorcolumn
+" set cursorline
 
 
 " PLUGINS
@@ -19,6 +19,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release' }
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'hardselius/warlock'
+Plug 'zaki/zazen'
+Plug 'pgdouyon/vim-yin-yang'
+Plug 'ewilazarus/preto'
+Plug 'andreasvc/vim-256noir'
 
 " Utils
 Plug 'preservim/nerdtree'
@@ -116,10 +121,23 @@ nmap <silent>tn :tabnew<CR>
 " COLORSCHEME
 " colorscheme sorbet
 " colorscheme gruvbox
-colorscheme lunaperche
+" colorscheme lunaperche
+" colorscheme warlock
+" colorscheme zazen
+" colorscheme yin
+" colorscheme preto
+
+" ONLY for vim256-noir START ================================
+colorscheme 256_noir
+" Change highlighting of cursor line when entering/leaving Insert Mode
+set cursorline
+highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
+autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
+autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
+" ONLY for vim256-noir END ==================================
 
 " Transparent background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " coc completitions
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
