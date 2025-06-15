@@ -1,4 +1,21 @@
 return {
+  {
+    "zenbones-theme/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    dependencies = "rktjmp/lush.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.kanagawabones_italic_comments = false
+      vim.g.kanagawabones_italic_strings = false
+      vim.g.kanagawabones_italic_keywords = false
+      vim.g.kanagawabones_italic_functions = false
+      vim.g.kanagawabones_italic_variables = false
+    end,
+  },
+
   -- modus-themes
   {
     "miikanissi/modus-themes.nvim",
@@ -70,7 +87,7 @@ return {
     priority = 1000,
     config = function()
       -- Safely apply the theme
-      local theme = "modus"
+      local theme = "kanagawabones"
       local ok, _ = pcall(vim.cmd.colorscheme, theme)
       if not ok then
         vim.notify("Colorscheme " + theme + " not found!", vim.log.levels.WARN)
