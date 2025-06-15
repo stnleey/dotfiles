@@ -103,6 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vim="nvim"
 alias rm="rm -i -v"
 
 export PATH=$PATH:/usr/local/go/bin
@@ -115,3 +116,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export PATH="$PATH:/home/stanisk/eclipse/java-2025-03/eclipse"
+
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
