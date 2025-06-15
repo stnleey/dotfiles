@@ -1,16 +1,2 @@
-require("st.base")
-require("st.maps")
-require("st.plugins")
-require("st.colorscheme")
-
-require("st.after.cmp")
-require("st.after.lsp")
-
-require("st.after.treesitter")
-require("st.after.nvimtree")
-require("st.after.which_key")
-require("st.after.lualine")
-require("st.after.telescope")
-require("st.after.telescope_file_browser")
-require("st.after.gitsigns")
-require("st.after.barbar")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
